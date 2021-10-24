@@ -2,7 +2,7 @@
 ELK 기초 개념 부터 설치 및 데이터 분석 하는 방법까지 업로드 할 리포지토리   
 
 
-# ELK Concept(Elasticsearch, Logstash, Kibana)
+### ELK Concept(Elasticsearch, Logstash, Kibana)
 Elasticsearch란?   
 -> 텍스트, 숫자, 위치 기반 정보, 정형 및 비정형 데이터 등 모든 유형의 데이터를 위한 분산형 오픈 소스 검색 및 분석 엔진임.  
 -> 또한 데이터 수집, 보강, 저장, 분석, 시각화를 위한 오픈 소스 도구 모음인 Elastic Stack의 중심 구성 요소

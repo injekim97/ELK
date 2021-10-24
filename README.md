@@ -12,11 +12,11 @@ Kibana
 -> Elasticsearch의 빠른 검색을 통해 데이터를 시각화 및 모니터링
  
 *** 
-* 2021.10.25 : PC에서 ELK 설치 방법   (블로그 기준 P18 -> 제목: 인턴+21 ELK 설치방법)
+**2021.10.25 : PC에서 ELK 설치 방법   (블로그 기준 P18 -> 제목: 인턴+21 ELK 설치방법) **
 1.  https://www.elastic.co/kr/downloads/elasticsearch  WINDOWS 파일 받은 후, 압축 풀기
 2.  https://www.elastic.co/kr/downloads/logstash   WINDOWS 파일 받은 후, 압축 풀기
 3.  https://www.elastic.co/kr/downloads/kibana  WINDOWS 파일 받은 후, 압축 풀기
-4.  시스템 -> 관련 설정(고급 시스템 설정) -> 고급 -> 환경변수(맨 밑) 클릭  -> 시스템 변수에 있는 path를 더블 클릭 -> 새로 만들기를 눌러 logstash 경로를 넣어준 후, 차례대로 kibana , elasticsearch경로를 각 각 넣어줌(e.g: C:\ElasticSearch\logstash-7.11.2\bin)
+4.  시스템 -> 관련 설정(고급 시스템 설정) -> 고급 -> 환경변수(맨 밑) 클릭  -> 시스템 변수에 있는 path를 더블 클릭 -> 새로 만들기를 눌러 logstash 경로를 넣어준 후, 차례대로 kibana , elasticsearch경로를 각 각 넣어줌 **(사진 첨부)**
 6.  cmd -> 관리자 명령프롬포트를 켜서 bin/elasticsearch.bat 실행
 7.  kibana/config/kibana.yml (port:5601) 유지 및 bin/kibana.bat 실행
 8.  bin/logstash -> logstash.bat 메모장을 열어 set JAVA_HOME=C:\ElasticSearch\logstash-7.11.2\jdk 추가 후 저장

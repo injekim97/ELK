@@ -12,7 +12,7 @@ Kibana
 -> Elasticsearch의 빠른 검색을 통해 데이터를 시각화 및 모니터링
  
 *** 
-* 2021.10.25 : PC에서 ELK 설치 방법   
+* 2021.10.25 : PC에서 ELK 설치 방법   (블로그 기준 P18 -> 제목: 인턴+21 ELK 설치방법)
 1.  https://www.elastic.co/kr/downloads/elasticsearch  WINDOWS 파일 받은 후, 압축 풀기
 2.  https://www.elastic.co/kr/downloads/logstash   WINDOWS 파일 받은 후, 압축 풀기
 3.  https://www.elastic.co/kr/downloads/kibana  WINDOWS 파일 받은 후, 압축 풀기

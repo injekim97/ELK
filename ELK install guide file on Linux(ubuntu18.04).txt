@@ -1,4 +1,4 @@
-1. java 설치(제일 먼저 설치해줘야 함, 나머진 상관 X)
+## 아래 명령어들을 순서대로 설치 할 것
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk

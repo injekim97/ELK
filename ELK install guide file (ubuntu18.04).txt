@@ -1,4 +1,4 @@
-## 아래 명령어들을 순서대로 설치 할 것
+**아래 명령어들을 순서대로 설치 할 것**
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
@@ -7,57 +7,57 @@ wget artifacts.elastic.co/downloads/kibana/kibana-7.12.0-amd64.deb
 wget artifacts.elastic.co/downloads/logstash/logstash-7.12.0-amd64.deb
 
 
-## ELK 압축 해제
+**ELK 압축 해제**
 sudo dpkg -i elasticsearch-7.12.0-amd64.deb
 sudo dpkg -i logstash-7.12.0-amd64.deb
 sudo dpkg -i kibana-7.12.0-amd64.deb
  
 
-## elasticsearch.yml 수정 
+**elasticsearch.yml 수정**
 /etc/elasticsearch/Elasticsearch.yml 수정 하자. (아래 사진처럼 해줌)
 * network.host : 0.0.0.0으로 수정 (모든 localhost에서 접근 가능하도록)
 * http.port : 9200 # elasticsearch port 번호는 9200
 * discovery.type : single-node 
 
 
-## elasticsearch.yml 권한 설정(Permission setting)
+**elasticsearch.yml 권한 설정(Permission setting)**
 sudo chown -R azureuser:azureuser /etc/default/elasticsearch
 sudo chown -R azureuser:azureuser /var/lib/elasticsearch
 
 
 
-## kibana.yml 수정 
+**kibana.yml 수정** 
 /etc/kibana/kibana.yml
 server.port: 5601
 server.host: 0.0.0.0
 elasticsearch.hosts: ["http://localhost:9200"]
 
 
-## elasticsearch.yml 권한 설정(Permission setting)
+**elasticsearch.yml 권한 설정(Permission setting)**
 sudo chown -R azureuser:azureuser /etc/kibana
 sudo chown -R azureuser:azureuser /usr/share/kibana
 /usr/share/kibana 로 경로 이동 후 mkdir config
 
 
-## Linux 에서 jdbc_driver 다운로드
+**Linux 에서 jdbc_driver 다운로드**
 wget dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.0.23-1ubuntu18.04_all.deb
 sudo dpkg -i mysql-connector-java_8.0.23-1ubuntu18.04_all.deb
 
 
 
-## logstash 권한 설정(Permission setting)
+**logstash 권한 설정(Permission setting)**
 sudo chown -R azureuser:azureuser /var/log/logstash
 sudo chown -R azureuser:azureuser /usr/share/java
 sudo chown -R azureuser:azureuser /var/lib/logstash
 
  
 
-## logstash 실행 명령어(Linux)
+**logstash 실행 명령어(Linux)**
 ./logstash -f test.conf --path.settings /etc/logstash/
 
 
 
-## ELK 실행방법(Liunx)
+**ELK 실행방법(Liunx)**
 * elasticsearch
 /usr/share/elasticsearch/bin 폴더 이동 후./elasticsearch
 

@@ -27,7 +27,7 @@ Kibana
 1-1. mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)    
 1-2. logstash.conf 파일을 ./logstash -f logstash.conf 로 실행할 수 있다.  
 
-2021.10.29 : apache-log를 kibana를 이용하여, geoip    
+**2021.10.29 : apache-log를 kibana를 이용하여, geoip**    
 -> apache-log conf file upload (아파치 로그 파일을 kibana에서 geoip를 찍을 수 있음)  
 
 **2021.10.29 : Linux 에서 ELK 설치 및 실행 방법(ELK install guide file (ubuntu18.04))**  

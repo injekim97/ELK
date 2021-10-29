@@ -23,12 +23,14 @@ Kibana
 9.  \bin>logstash -f logstash.conf 으로 logstash 실행
 
 *** 
-**2021.10.29 : logstash - MySQL 연동 방법(jdbc input plugin)**   
+**2021.10.29 : logstash - MySQL 연동 및 실행 방법(jdbc input plugin)**   
 -> mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)
 -> logstash.conf 파일을 ./logstash -f logstash.conf 로 실행할 수 있다.  
--> apache-log conf file upload (아파치 로그 파일을 kibana에서 geoip를 찍을 수 있음)  
--> **Linux에서 Elasticsearch(ELK) 설치 및 실행 방법(ELK install guide file (ubuntu18.04))**
 
+2021.10.29 : apache-log를 kibana를 이용하여, geoip 찍기
+-> apache-log conf file upload (아파치 로그 파일을 kibana에서 geoip를 찍을 수 있음)  
+
+**2021.10.29 : Linux 에서 ELK 설치 및 실행 방법(ELK install guide file (ubuntu18.04))**  
 
 *** 
-**2021.10.?? : blog page 17 : 가상머신(Ubuntu_Azure)에서 MySQL 설치방법 작성 할 차례  
+**2021.10.?? : blog page 17 : 가상머신(Ubuntu_Azure)에서 MySQL 설치방법 작성 할 차례   

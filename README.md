@@ -23,8 +23,8 @@ Kibana
 9.  \bin>logstash -f logstash.conf 으로 logstash 실행
 
 *** 
-**2021.10.29 : logstash - MySQL 연동 및 실행 방법(jdbc input plugin)**   
-1-1. mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)
+**2021.10.29 : logstash - MySQL 연동 및 실행 방법(jdbc input plugin)**     
+1-1. mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)    
 1-2. logstash.conf 파일을 ./logstash -f logstash.conf 로 실행할 수 있다.  
 
 2021.10.29 : apache-log를 kibana를 이용하여, geoip    

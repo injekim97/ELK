@@ -21,3 +21,8 @@ Kibana
 7.  kibana/config/kibana.yml (port:5601) 유지 및 bin/kibana.bat 실행
 8.  bin/logstash -> logstash.bat 메모장을 열어 set JAVA_HOME=C:\ElasticSearch\logstash-7.11.2\jdk 추가 후 저장
 9.  \bin>logstash -f logstash.conf 으로 logstash 실행
+
+*** 
+**2021.10.29 : logstash - MySQL 연동 방법(jdbc input plugin)**   
+-> mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)
+-> logstash.conf 파일을 ./logstash -f logstash.conf 로 실행할 수 있다.  

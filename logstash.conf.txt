@@ -1,0 +1,25 @@
+input {
+    jdbc {
+        clean_run => true
+        jdbc_driver_library => "C:\ElasticSearch\mysql-connector-java-8.0.23\mysql-connector-java-8.0.23.jar"
+        jdbc_driver_class => "com.mysql.jdbc.Driver"
+        jdbc_connection_string => "jdbc:mysql://localhost:3306/jobschema"
+        jdbc_user => "root" (mysql ID)
+        jdbc_password => "1234" (mysql PASSWORD)
+        schedule => "* * * * *"
+        statement => "select jobid, jobname, executiontime, jobstatus from tablename WHERE jobid > :sql_last_value"
+        use_column_value => true
+        tracking_column => "jobid"
+    }
+}
+
+output{
+    elasticsearch {
+        hosts => ["localhost:9200"]
+        index => "logstashmysql" (logstash에 저장 되는 인덱스 명)
+    }
+
+    stdout {
+        codec => rubydebug
+    }
+}

@@ -12,7 +12,7 @@ Kibana
 -> Elasticsearch의 빠른 검색을 통해 데이터를 시각화 및 모니터링
  
 *** 
-**2021.10.25 : PC에서 ELK 설치 방법   (블로그 기준 P18 -> 제목: 인턴+21 ELK 설치방법)**
+**2021.10.25 : PC에서 ELK 설치 방법  
 1.  https://www.elastic.co/kr/downloads/elasticsearch  WINDOWS 파일 받은 후, 압축 풀기
 2.  https://www.elastic.co/kr/downloads/logstash   WINDOWS 파일 받은 후, 압축 풀기
 3.  https://www.elastic.co/kr/downloads/kibana  WINDOWS 파일 받은 후, 압축 풀기
@@ -27,6 +27,8 @@ Kibana
 -> mysql-connector-java-8.0.23 을 다운 후 압축을 풀어준다. (Linux or window)
 -> logstash.conf 파일을 ./logstash -f logstash.conf 로 실행할 수 있다.  
 -> apache-log conf file upload (아파치 로그 파일을 kibana에서 geoip를 찍을 수 있음)  
+-> Linux에서 Elasticsearch(ELK) 설치 및 실행 방법(ELK install guide file on Linux(ubuntu18.04))  
+
 
 *** 
--> [2021.04.14] 인턴 +44 Linux(Ubuntu18.04) - ELK 설치(MySQL 연동 포함) & Virtual Machine (Azure) 작성 할 차례   
+**2021.10.?? : blog page 17 : 가상머신(Ubuntu_Azure)에서 MySQL 설치방법 작성 할 차례  

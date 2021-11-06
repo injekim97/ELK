@@ -1,32 +1,19 @@
 **MySQL 설치 파일 wget으로 가져오기(아래 명령어들을 순서대로 입력 할 것)**
 wget dev.mysql.com/get/mysql-apt-config_0.8.20-1_all.deb
-
 sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb
 - MySQL Server & Cluser
 - mysql-8.0
 - OK
- 
-
 sudo apt-get update
 sudo apt-get install mysql-server
-
-
-
-
 
 
 **MySQL connection**
 sudo /usr/bin/mysql -u root -p
 
 
-
-
-
-
 **Check the status of MySQL**
 systemctl status mysql 
-
-
 
 
 **MySQL start & stop**
@@ -34,8 +21,7 @@ sudo systemctl start mysql
 sudo systemctl stop mysql
 
 
-
 ** How to Allow Remote Connections to MySQL? **
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 bind-address            = 0.0.0.0 
-- save  &  sudo systemctl restart mysql 
+- save  &  sudo systemctl restart mysql    

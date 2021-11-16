@@ -37,4 +37,5 @@ Kibana
 
 
 *** 
-**2021.11.12 :  크롤링 카테고리 만들어서 인턴 때 했던 것들 다 업로드 하기  
+**2021.11.16 : 로컬PC에 있는 CSV 파일 데이터를 elasticsearch에 전송하는 방법  
+-> PC(CSV file) to Elasticsearch.conf file    

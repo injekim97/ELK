@@ -39,3 +39,8 @@ Kibana
 *** 
 **2021.11.16 : 로컬PC에 있는 CSV 파일 데이터를 elasticsearch에 전송하는 방법  
 -> PC(CSV file) to Elasticsearch.conf file    
+
+
+*** 
+**2021.11.26 : Python 언어로 logstash 에 사용될 다중 테이블을 넣는 코드 작성 
+-> jdbc_multi_table_insert   

@@ -30,17 +30,22 @@ Kibana
 **2021.10.29 : apache-log를 kibana를 이용하여, geoip**    
 -> apache-log conf file upload (아파치 로그 파일을 kibana에서 geoip를 찍을 수 있음)  
 
-**2021.10.29 : Linux 에서 ELK 설치 및 실행 방법(ELK install guide file (ubuntu18.04))**  
+**2021.10.29 : Linux 에서 ELK 설치 및 실행 방법(ELK install guide file (ubuntu18.04))**    
 
 *** 
-**2021.11.06 : 가상 머신에서 MySQL 설치 및 실행 방법(외부접속 허용방법)  
+**2021.11.06 : 가상 머신에서 MySQL 설치 및 실행 방법(외부접속 허용방법)**     
 
 
 *** 
-**2021.11.16 : 로컬PC에 있는 CSV 파일 데이터를 elasticsearch에 전송하는 방법  
+**2021.11.16 : 로컬PC에 있는 CSV 파일 데이터를 elasticsearch에 전송하는 방법**    
 -> PC(CSV file) to Elasticsearch.conf file    
 
 
 *** 
-**2021.11.26 : Python 언어로 logstash 에 사용될 다중 테이블을 넣는 코드 작성 
+**2021.11.26 : Python 언어로 logstash 에 사용될 다중 테이블을 넣는 코드 작성**   
 -> jdbc_multi_table_insert   
+
+
+*** 
+**2021.11.27 : ELK install (Ubuntu20.04) + XPack(Security 설정 및 User Create) + jdbc on Azure**   
+-> ELK install (Ubuntu20.04) + XPack  

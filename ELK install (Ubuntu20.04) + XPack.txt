@@ -1,0 +1,198 @@
+---------------------------------------------------------------------------------------------------
+
+1. Linux(Ubuntu20.04)에서 JAVA 설치
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install openjdk-11-jdk
+java -version
+
+
+
+
+2. wget 으로 ELK 파일 가져오기
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.0-amd64.deb
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.13.0-amd64.deb
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.13.0-amd64.deb
+
+ 
+
+3. ELK 압축해제
+sudo dpkg -i elasticsearch-7.13.0-amd64.deb
+sudo dpkg -i logstash-7.13.0-amd64.deb
+sudo dpkg -i kibana-7.13.0-amd64.deb
+
+ 
+
+4. elasticsearch 디렉토리로 접근하기 위한 권한 설정 후, elasticsearch.yml 설정
+
+ 
+elasticsearch 실행을 위한 권한 설정(azureuser는 ubuntu에 나타나는 @앞 id를 뜻함)
+
+* 복사해서 전부 실행
+sudo chown -R azureuser:azureuser /etc/elasticsearch 
+sudo chown -R azureuser:azureuser /usr/share/elasticsearch/bin
+sudo chown -R azureuser:azureuser /etc/default/elasticsearch
+sudo chown -R azureuser:azureuser /var/log/elasticsearch
+sudo chown -R azureuser:azureuser /var/lib/elasticsearch
+
+ 
+
+/etc/elasticsearch/elasticsearch.yml
+network.host: 0.0.0.0
+http.port: 9200
+discovery.type: single-node
+xpack.security.enabled: true
+
+ 
+
+ 
+
+* elasticsearch 실행
+/usr/share/elasticsearch/bin$ ./elasticsearch
+
+ 
+
+
+* 만약, elasticsearch 실행시 아래와 같은 에러발생
+에러내용
+Unexpected response code [500] from calling GET http://172.17.0.2:9200/_security/_authenticate?pretty It doesn't look like the X-Pack security feature is enabled on this Elasticsearch node. Please check if you have enabled X-Pack security in your elasticsearch.yml configuration file. ERROR: X-Pack Security is disabled by configuration.
+
+해결방법 : [500]에러는, elasticsearch가 실행중이여서 에러가 발생함. 실행 -> 종료후 -> 재실행.
+
+재실행시 아래와 같은 에러가 발생 (chown -R 이 아닌, chmod로 줄 것)
+sudo chmod 777 /etc/default/elasticsearch
+sudo chmod 777 -R /etc/default/elasticsearch
+chmod -R 777 /etc/default/elasticsearch
+./elasticsearch      
+
+
+
+
+
+
+5. kibana 디렉토리로 접근하기 위한 권한 설정 후, kibana.yml 설정(/etc/kibana)
+
+ 
+* kibana 실행을 위한 권한 설정 및 디렉토리 생성
+* 복사해서 전부 실행 (무조건 차례대로 명령어 복사해서 수행 할 것)
+sudo chown -R azureuser:azureuser /etc/kibana
+sudo mkdir /usr/share/kibana/config
+sudo mkdir /usr/share/kibana/data
+sudo chown -R azureuser:azureuser /usr/share/kibana 
+
+ 
+
+<kibana.yml 수정>
+server.port: 5601
+server.host: 0.0.0.0
+elasticsearch.hosts: ["http://localhost:9200"]
+
+
+ 
+
+<kibana.yml 수정 후, 아래 명령어 복붙 후 수행>
+sudo cp kibana.yml /usr/share/kibana/config/kibana.yml
+sudo chmod 777 /usr/share/kibana/data/
+sudo chown -R azureuser:azureuser /usr/share/kibana/config 
+
+
+
+
+
+* Elasticsearch,kibana(로그인 기능 설정 - XPACK)
+
+elasticsearch,kibana 실행한 상태에서, 아래와 같은 명령어 수행
+sudo ./elasticsearch-setup-passwords auto                    
+
+* 아래와 같은 사진이 안뜨면, 계속 elasticsearch,kibana 연결 끊었다가, 다시 실행 후 
+* 비번 따로 txt 파일에 저장
+
+
+
+
+<해당 명령어 순서대로 수행>
+sudo systemctl stop elasticsearch && sudo systemctl stop kibana
+/usr/share/elasticsearch/bin 이동 후, ./elasticsearch 실행
+curl -XGET -u elastic:WJxMUyU17wXrLba5jlWX http://localhost:9200/_cluster/health?pretty
+
+
+
+
+
+
+
+< ★★★★★ kibana.yml 수정 2가지 경로 모두 해줘야함 ★★★★★>
+* ★★★★★ kibana.yml에선 username은 kibana, password는 kibana 비밀번호를 적어줘야함 ★★★★★
+
+
+1. sudo vi /etc/kibana/kibana.yml
+2. sudo cp /etc/kibana/kibana.yml /usr/share/kibana/config/kibana.yml
+
+elasticsearch.username: "kibana"          # kibana_system -> kibana로 변경
+elasticsearch.password: "ZTS9jtJzedK0o1DJ61F0"
+★★★★★  auto로 저장된 비밀번호 값 적어줌(kibana_system 이 아닌, kibana 비밀번호임 ★★★★★ 
+
+또한, auto로 저장된 순서(맨위에서 3번쨰 - kibana임)
+->★★★★★ elastic 비번이 아니다. ★★★★★
+
+
+
+
+
+
+<위의 2가지에 kibana.yml 업데이트 안할시 에러발생>
+
+log   [03:07:34.722] [info][monitoring][monitoring][plugins] config sourced from: production cluster
+log   [03:07:35.023] [info][savedobjects-service] Waiting until all Elasticsearch nodes are compatible with Kibana before starting saved objects migrations...
+log   [03:07:35.149] [error][savedobjectservice] Unable to retrieve version information from Elasticsearch nodes.
+
+
+ 
+
+해결방법 (두 가지 경로에 있는 kibana.yml를 수정해줘야함)
+1. sudo vi /etc/kibana/kibana.yml
+2. sudo vi /usr/share/kibana/config/kibana.yml
+
+ 
+elasticsearch.username: "kibana"          # kibana_system -> kibana로 변경
+elasticsearch.password: "ZTS9jtJzedK0o1DJ61F0"
+
+ 
+
+<logstash 실행 하기 위한 권한 설정>
+sudo chown -R ubuntu:ubuntu /usr/share/logstash/data/
+sudo chown -R ubuntu:ubuntu /var/lib/logstash/
+sudo chown -R ubuntu:ubuntu /usr/share/logstash/logstash-core/lib/logstash/settings.rb
+
+sudo mkdir /usr/share/logstash/data/queue
+sudo chown -R ubuntu:ubuntu /usr/share/logstash/data/queue
+sudo chown -R ubuntu:ubuntu /var/log/logstash/
+
+
+--------------------------------------------------------------------------------------------------------------------------
+* 해당 에러가 발생할 때 해결방법
+[FATAL] 2021-05-21 07:17:18.402 [main] runner - An unexpected error occurred! {:error=>#<ArgumentError: Path "/usr/share/logstash/data/queue" must be a writable directory. It is not writable.>, :backtrace=>["/usr/share/logstash/logstash-core/lib/logstash/settings.rb:530:in `validate'", "/usr/share/logstash/logstash-core/lib/logstash/settings.rb:290:in `validate_value'", "/usr/share/logstash/logstash-core/lib/logstash/settings.rb:201:in `block in validate_all'", "org/jruby/RubyHash.java:1415:in `each'", "/usr/share/logstash/logstash-core/lib/logstash/settings.rb:200:in `validate_all'", "/usr/share/logstash/logstash-core/lib/logstash/runner.rb:326:in `execute'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/clamp-0.6.5/lib/clamp/command.rb:67:in `run'", "/usr/share/logstash/logstash-core/lib/logstash/runner.rb:274:in `run'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/clamp-0.6.5/lib/clamp/command.rb:132:in `run'", "/usr/share/logstash/lib/bootstrap/environment.rb:88:in `<main>'"]}
+
+
+error=>#<ArgumentError: Path "/usr/share/logstash/data/queue" must be a writable directory. It is not writable.
+-> 해당 디렉토리(/usr/share/logstash/data/queue)에 쓰기 권한이 없어서 오류가 발생
+-> 해결 하기 위해 아래와 같은 명령어를 붙여 넣기 하면 된다. 
+
+sudo mkdir /usr/share/logstash/data/queue
+sudo chown -R azureuser:azureuser /usr/share/logstash/data/queue
+
+
+아래와 같은 Error 발생시
+/var/log/logstash/logstash-plain.log java.io.IOException: Permission denied
+
+* 해결방법 (권한 부여)
+sudo chown -R azureuser:azureuser /var/log/logstash/
+
+
+만약 logstash 실행 시 아래와 같은 에러가 발생했다면? 
+
+[FATAL] 2020-08-01 13:57:01.895 [LogStash::Runner] runner - Logstash could not be started because there is already another instance using the configured data directory.  If you wish to run multiple instances, you must change the "path.data" setting.
+
+해결 방법 :  ps -ef | grep logstash  후에 (숫자가 두개 나오는데 맨앞에꺼 적어줌) , kill -9 맨앞에(숫자 입력)  
+-> 그런 후에 다시, ps -ef | grep logstash 하면 종료된 것을 확인할 수 있음 (logstash재실행)  

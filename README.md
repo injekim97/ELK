@@ -53,5 +53,5 @@ Kibana
 
 
 *** 
-**2021.12.19 :  JSON DATA를 MySQL DB에 저장하는 방법   
+**2021.12.19 :  JSON DATA를 MySQL DB에 저장하는 방법**   
 -> 파일명 : PC에 json 파일을 DB에 저장하는 방법

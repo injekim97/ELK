@@ -46,12 +46,16 @@ Kibana
 -> jdbc_multi_table_insert   
 
 
+***  
+**2021.11.27 : ELK install (Ubuntu20.04) + XPack(Security 설정 및 User Create) + jdbc on Azure**    
+-> ELK install (Ubuntu20.04) + XPack   
+
+
 *** 
-**2021.11.27 : ELK install (Ubuntu20.04) + XPack(Security 설정 및 User Create) + jdbc on Azure**   
--> ELK install (Ubuntu20.04) + XPack  
-
+**2021.12.19 :  JSON DATA를 MySQL DB에 저장하는 방법**     
+-> 파일명 : PC에 json 파일을 DB에 저장하는 방법   
 
 
 *** 
-**2021.12.19 :  JSON DATA를 MySQL DB에 저장하는 방법**   
--> 파일명 : PC에 json 파일을 DB에 저장하는 방법
+**2021.12.25 : How to run Background in elasticsearch & kibana? **   
+-> 파일명 : elasticsearch & kibana background run.txt      

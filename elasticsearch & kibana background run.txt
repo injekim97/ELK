@@ -1,0 +1,8 @@
+**elasticsearch 백그라운드(데몬) 실행**
+ubuntu@ip-172-31-9-174:/usr/share/elasticsearch$ bin/elasticsearch -d
+
+
+**kibana 백그라운드(데몬) 실행**
+ubuntu@ip-172-31-9-174:~$ sudo chown -R ubuntu:ubuntu /home/ubuntu/
+ubuntu@ip-172-31-9-174:~$ nohup /usr/share/kibana/bin/kibana &
+[1] 62242

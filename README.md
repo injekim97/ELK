@@ -57,5 +57,5 @@ Kibana
 
 
 *** 
-**2021.12.25 : How to run Background in elasticsearch & kibana? **   
+**2021.12.25 : How to run Background in elasticsearch & kibana?**   
 -> 파일명 : elasticsearch & kibana background run.txt      

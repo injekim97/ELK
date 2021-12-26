@@ -1,0 +1,19 @@
+**Linux 에서 DB 접속**
+mysql --local-infile=1 -u root -p
+ 
+
+
+**MySQL 접속 후 (example)**
+LOAD DATA LOCAL INFILE "경로.csv" INTO TABLE 테이블명.서브테이블 FIELDS TERMINATED BY "," IGNORE 1 LINES;
+
+
+
+**MySQL 접속 후**
+mysql> LOAD DATA LOCAL INFILE "/home/ubuntu/Message_csv.csv" INTO TABLE Chatbot.Message FIELDS TERMINATED BY "," IGNORE 1 LINES;
+Query OK, 1000000 rows affected, 65535 warnings (8.61 sec)
+Records: 1000000  Deleted: 0  Skipped: 0  Warnings: 2000000
+
+ 
+mysql> LOAD DATA LOCAL INFILE "/home/ubuntu/data/국가건강검진_혈액검사데이터.csv" INTO TABLE DATA.blood_test FIELDS TERMINATED BY "," IGNORE 1 LINES;
+Query OK, 1000000 rows affected, 65535 warnings (8.09 sec)
+Records: 1000000  Deleted: 0  Skipped: 0  Warnings: 1000000

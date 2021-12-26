@@ -66,3 +66,11 @@ Kibana
 -> 파일명 : geopoint(Lat,Long).conf  
 -> DB에 저장된 데이터를 kibana에 위도와 경도(좌표)를 나타내기 위한 conf 파일   
 
+
+
+
+*** 
+**2021.12.27 : How to store a large-capacity CSV in the DB?**   
+-> 파일명 : Large_CSV(DATA SAVE Method).conf    
+-> 리눅스에서 CSV로 저장된 10만 컬럼이상 데이터들을 DB에 저장하는 방법   
+

@@ -59,3 +59,10 @@ Kibana
 *** 
 **2021.12.25 : How to run Background in elasticsearch & kibana?**   
 -> 파일명 : elasticsearch & kibana background run.txt      
+
+
+*** 
+**2021.12.26 : How to display latitude and longitude on the map using Logstash?**   
+-> 파일명 : geopoint(Lat,Long).conf  
+-> DB에 저장된 데이터를 kibana에 위도와 경도(좌표)를 나타내기 위한 conf 파일   
+

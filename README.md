@@ -71,6 +71,6 @@ Kibana
 
 *** 
 **2021.12.27 : How to store a large-capacity CSV in the DB?**   
--> 파일명 : Large_CSV(DATA SAVE Method).conf    
+-> 파일명 : Large_CSV(DATA SAVE Method).txt
 -> 리눅스에서 CSV로 저장된 10만 컬럼이상 데이터들을 DB에 저장하는 방법   
 

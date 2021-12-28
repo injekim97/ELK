@@ -74,3 +74,8 @@ Kibana
 -> 파일명 : Large_CSV(DATA SAVE Method).txt   
 -> 리눅스에서 CSV로 저장된 10만 컬럼이상 데이터들을 DB에 저장하는 방법   
 
+
+*** 
+**2021.12.28 : JSON DATA AUTO Upload**   
+-> 파일명 : 최종) 포스트맨에서 request한 json data를 mysql에 넣는 코드.ipynb  
+

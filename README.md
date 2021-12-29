@@ -84,3 +84,15 @@ Kibana
 **2021.12.29 : How to read CSV files on Linux and save them in AWS DB?**  
 -> 파일명 : LOAD_DATA.py   
 -> 리눅스에서 CSV 파일을 읽어 AWS DB에 저장  
+
+
+*** 
+**2021.12.30 : 자동으로 S3에 업로드(PC & Linux -> AWS S3)**   
+-> 자동으로 S3에 업로드(pc 에서 AWS S3)    
+-> 파일명 : local_pc_to_aws_S3_upload.py     
+-> s3_upload.sh (python3 /home/ubuntu/local_pc_to_aws_S3_upload.py)    
+
+
+-> 자동으로 S3에 업로드(Linux 에서 AWS S3)          
+-> 파일명 : Linux_to_aws_S3_upload.py     
+

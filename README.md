@@ -87,12 +87,14 @@ Kibana
 
 
 *** 
-**2021.12.30 : 자동으로 S3에 업로드(PC & Linux -> AWS S3)**   
--> 자동으로 S3에 업로드(pc 에서 AWS S3)    
--> 파일명 : local_pc_to_aws_S3_upload.py     
--> s3_upload.sh (python3 /home/ubuntu/local_pc_to_aws_S3_upload.py)    
-
-
--> 자동으로 S3에 업로드(Linux 에서 AWS S3)          
+**2021.12.30 : 자동으로 S3에 업로드(PC & Linux -> AWS S3)**    
+-> 자동으로 S3에 업로드(pc 에서 AWS S3)     
+-> 파일명 : local_pc_to_aws_S3_upload.py      
+-> 자동으로 S3에 업로드(Linux 에서 AWS S3)            
 -> 파일명 : Linux_to_aws_S3_upload.py     
+
+**crontab 설정**   
+-> s3_upload.sh (python3 /home/ubuntu/local_pc_to_aws_S3_upload.py)    
+***
+
 

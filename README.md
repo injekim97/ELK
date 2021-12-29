@@ -79,3 +79,8 @@ Kibana
 **2021.12.28 : JSON DATA AUTO Upload**   
 -> 파일명 : 최종) 포스트맨에서 request한 json data를 mysql에 넣는 코드.ipynb  
 
+
+*** 
+**2021.12.29 : How to read CSV files on Linux and save them in AWS DB?**  
+-> 파일명 : LOAD_DATA.py   
+-> 리눅스에서 CSV 파일을 읽어 AWS DB에 저장  

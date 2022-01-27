@@ -98,3 +98,9 @@ Kibana
 ***
 
 
+
+
+**2022.01.27 : How to add json data every -10 minutes from the current time?**     
+-> 파일명 :  -10_minutes_of_data.py  
+*** 
+
